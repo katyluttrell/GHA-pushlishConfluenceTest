@@ -13,7 +13,7 @@ jobs:
           cd docs
           mkdir publish_to_confluence
           cd publish_to_confluence
-          "# Hello, World" > hello_world.md
+          echo "# Hello, World" > hello_world.md
       - name: markdown-confluence
         uses: markdown-confluence/publish-action@v5
         with:

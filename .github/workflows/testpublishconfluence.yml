@@ -14,6 +14,8 @@ jobs:
           mkdir publish_to_confluence
           cd publish_to_confluence
           echo "# Hello, World" > hello_world.md
+          cd ../../
+          pwd
       - name: markdown-confluence
         uses: markdown-confluence/publish-action@v5
         with:

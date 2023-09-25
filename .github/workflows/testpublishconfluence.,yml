@@ -1,0 +1,24 @@
+name: Publish To Confluence
+on: [push, workflow_dispatch]
+jobs:
+  publishToConfluence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Make Markdown File
+        run: |
+            mkdir docs
+            cd docs
+            mkdir publish_to_confluence
+            cd publish_to_confluence
+            "# Hello, World" > hello_world.md
+      - name: Publish Markdown to Confluence
+        uses: markdown-confluence/publish@v1
+        with:
+          confluenceBaseUrl: https://your-confluence-instance-url
+          confluenceParentId: 123456
+          folderToPublish: "docs",
+          contentRoot: /docs
+          atlassianUserName: ${{ secrets.ATLASSIAN_USERNAME }}
+          atlassianApiToken: ${{ secrets.ATLASSIAN_API_TOKEN }}

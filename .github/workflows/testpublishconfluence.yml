@@ -19,7 +19,7 @@ jobs:
         with:
           confluenceBaseUrl: https://katy-luttrell.atlassian.net
           confluenceParentId: 294913
-          folderToPublish: "docs",
+          folderToPublish: "docs"
           contentRoot: /docs
           atlassianUserName: ${{ secrets.ATLASSIAN_USERNAME }}
           atlassianApiToken: ${{ secrets.ATLASSIAN_API_TOKEN }}
